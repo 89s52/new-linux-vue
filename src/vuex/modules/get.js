@@ -12,7 +12,6 @@ export default {
                     Authorization: 'APPCODE d5bd01e6bb184ea49b5e7301ccf44afd'
                 }
             }).then(res => {
-                console.log(res);
                 commit('getData', res);
             })
         }

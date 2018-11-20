@@ -9,12 +9,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'getData',
-      component: getData
-    },
-    {
-      path: '/getData',
+      path: '/getdata',
       name: 'getData',
       component: getData
     },
