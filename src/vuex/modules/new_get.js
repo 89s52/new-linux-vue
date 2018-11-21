@@ -17,7 +17,7 @@ export default {
             console.log("new_onDel!");
             axios
                 .post("/new_users/delete", {
-                    securityCode: state.result.data.securityCode
+                    name: state.result.data.name
                 })
                 .then(res => {
                     console.log(res);
@@ -40,11 +40,13 @@ export default {
                     console.log(res);
                 });
         },
-        new_onFind({ state }) {
+        new_onFind({ commit, state }) {
             console.log('new_onFind');
-            console.log(state.result);
             axios.post('/new_users/find', { new_name: state.result.data.name }).then(res => {
+                let length =  res.data.length
+                res = res.data[length-1];
                 console.log(res);
+                commit('getData', res)
             })
         }
     },
