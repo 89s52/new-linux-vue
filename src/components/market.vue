@@ -52,6 +52,9 @@
      <el-form-item>
     <el-button type="primary" @click="onUpdate">修改</el-button>
     </el-form-item>
+    <el-form-item>
+    <el-button type="primary" @click="onFind">查找</el-button>
+    </el-form-item>
   </el-form>
   </div>
 </template>
@@ -68,6 +71,9 @@ export default {
     },
     onUpdate() {
       this.$store.dispatch("new_onUpdate");
+    },
+    onFind(){
+      this.$store.dispatch('new_onFind')
     },
     tableRowClassName({ row, rowIndex }) {
       if (rowIndex === 1) {
